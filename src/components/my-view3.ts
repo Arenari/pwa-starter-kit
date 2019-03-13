@@ -47,30 +47,9 @@ export class MyView3 extends connect(store)(PageViewElement) {
       ButtonSharedStyles,
       css`
         button {
-          border: 2px solid var(--app-dark-text-color);
+          border: 2px solid black;
           border-radius: 3px;
           padding: 8px 16px;
-        }
-
-        button:hover {
-          border-color: var(--app-primary-color);
-          color: var(--app-primary-color);
-        }
-
-        .cart,
-        .cart svg {
-          fill: var(--app-primary-color);
-          width: 64px;
-          height: 64px;
-        }
-
-        .circle.small {
-          margin-top: -72px;
-          width: 28px;
-          height: 28px;
-          font-size: 16px;
-          font-weight: bold;
-          line-height: 30px;
         }
       `
     ];
@@ -80,7 +59,7 @@ export class MyView3 extends connect(store)(PageViewElement) {
     return html`
       <section>
         <h2>Redux example: shopping cart</h2>
-        <div class="cart">${addToCartIcon}<div class="circle small">${this._quantity}</div></div>
+        <div>${addToCartIcon}<div>${this._quantity}</div></div>
         <p>This is a slightly more advanced Redux example, that simulates a
           shopping cart: getting the products, adding/removing items to the
           cart, and a checkout action, that can sometimes randomly fail (to

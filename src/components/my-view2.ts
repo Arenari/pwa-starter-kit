@@ -48,7 +48,7 @@ export class MyView2 extends connect(store)(PageViewElement) {
     return html`
       <section>
         <h2>Redux example: simple counter</h2>
-        <div class="circle">${this._value}</div>
+        <div>${this._value}</div>
         <p>This page contains a reusable <code>&lt;counter-element&gt;</code>. The
         element is not built in a Redux-y way (you can think of it as being a
         third-party element you got from someone else), but this page is connected to the
