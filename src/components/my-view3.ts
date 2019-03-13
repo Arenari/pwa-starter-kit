@@ -31,7 +31,6 @@ import './shop-cart.js';
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
 import { ButtonSharedStyles } from './button-shared-styles.js';
-import { addToCartIcon } from './my-icons.js';
 
 @customElement('my-view3')
 export class MyView3 extends connect(store)(PageViewElement) {
@@ -59,7 +58,7 @@ export class MyView3 extends connect(store)(PageViewElement) {
     return html`
       <section>
         <h2>Redux example: shopping cart</h2>
-        <div>${addToCartIcon}<div>${this._quantity}</div></div>
+        <p>Number of items in the cart: <b>${this._quantity}</b></p>
         <p>This is a slightly more advanced Redux example, that simulates a
           shopping cart: getting the products, adding/removing items to the
           cart, and a checkout action, that can sometimes randomly fail (to
@@ -70,13 +69,9 @@ export class MyView3 extends connect(store)(PageViewElement) {
       <section>
         <h3>Products</h3>
         <shop-products></shop-products>
-
-        <br>
         <h3>Your Cart</h3>
         <shop-cart></shop-cart>
-
         <div>${this._error}</div>
-        <br>
         <p>
           <button ?hidden="${this._quantity == 0}" @click="${this._checkoutButtonClicked}">
             Checkout
