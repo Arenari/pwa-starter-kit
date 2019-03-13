@@ -13,22 +13,19 @@ import {
   UPDATE_PAGE,
   UPDATE_OFFLINE,
   OPEN_SNACKBAR,
-  CLOSE_SNACKBAR,
-  UPDATE_DRAWER_STATE
+  CLOSE_SNACKBAR
 } from '../actions/app.js';
 import { RootAction } from '../store.js';
 
 export interface AppState {
   page: string;
   offline: boolean;
-  drawerOpened: boolean;
   snackbarOpened: boolean;
 }
 
 const INITIAL_STATE: AppState = {
   page: '',
   offline: false,
-  drawerOpened: false,
   snackbarOpened: false,
 };
 
@@ -43,11 +40,6 @@ const app: Reducer<AppState, RootAction> = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         offline: action.offline
-      };
-    case UPDATE_DRAWER_STATE:
-      return {
-        ...state,
-        drawerOpened: action.opened
       };
     case OPEN_SNACKBAR:
       return {
