@@ -11,7 +11,7 @@ const rendertronMiddleware = rendertron.makeMiddleware({
 });
 
 app.use((req: any, res: any, next: any) => {
-  req.headers['host'] = 'typescript-minimal-ui.firebaseapp.com';
+  req.headers['host'] = '<YOUR HOST URL HERE>';
   return rendertronMiddleware(req, res, next);
 });
 app.get('/*', prpl.makeHandler('./build', require('../build/polymer.json')));
